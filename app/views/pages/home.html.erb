@@ -1,0 +1,14 @@
+<section>
+  <h1 class="mb-8">Hello Home</h1>
+  <% if company_signed_in? %>
+    <%= link_to 'Logout Company', destroy_company_session_path, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure you want to sign out?"}, class: "bg-red-400 p-3 border-r-2 text-white rounded-lg" %>
+  <% else %>
+    <%= link_to 'Login Company', new_company_session_path, class: "bg-blue-400 p-3 border-r-2 text-white rounded-lg" %>
+  <% end %>
+  
+  <% if admin_signed_in? %>
+    <%= link_to 'Logout Admin', destroy_admin_session_path, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure you want to sign out?"}, class: "bg-red-400 p-3 border-r-2 text-white rounded-lg" %>
+  <% else %>
+    <%= link_to 'Login Admin', new_admin_session_path, class: "bg-blue-400 p-3 border-r-2 text-white rounded-lg" %>
+  <% end %>
+</section>
